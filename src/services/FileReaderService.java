@@ -26,9 +26,12 @@ public class FileReaderService {
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			System.out.println("File Not Found. Please check the file path and try again.");
 			e.printStackTrace();
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println("There was an I/O Exception.  Please check and try again.");
 			e.printStackTrace();
 		}
 		return users;
