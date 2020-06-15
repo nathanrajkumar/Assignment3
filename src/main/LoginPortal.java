@@ -21,6 +21,7 @@ public class LoginPortal {
 		String passwordInput;
 
 		FileReaderService reader = new FileReaderService();
+		LoginService login = new LoginService();
 		users = reader.getUsersFromFile("src/resources/data.txt");
 		Scanner scanner = new Scanner(System.in);
 		
@@ -35,7 +36,7 @@ public class LoginPortal {
 			System.out.println("Please enter a password:");
 			passwordInput = scanner.nextLine();
 			
-			if(LoginService.processLogin(users, usernameInput, passwordInput).getName() != null) {
+			if(login.processLogin(users, usernameInput, passwordInput).getName() != null) {
 				isValid = true;
 			};
 		}
