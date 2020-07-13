@@ -2,7 +2,7 @@ package com.nathanrajkumar.model;
 
 import java.util.List;
 
-import com.nathanrajkumar.services.LoginService;
+import com.nathanrajkumar.services.LoginServiceImpl;
 
 public class AdminUser extends User {
 	
@@ -16,7 +16,7 @@ public class AdminUser extends User {
 	}
 
 	public User loginAsAnotherUser(List<User> users, String usernameInput) {
-		LoginService login = new LoginService();
+		LoginServiceImpl login = new LoginServiceImpl();
 		return login.validateUserLoginAsAdminUser(users, usernameInput);
 	}
 

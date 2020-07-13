@@ -9,9 +9,9 @@ import com.nathanrajkumar.model.User;
 
 public interface FileService {
 	
-	String fileName = "src/com/nathanrajkumar/resources/dataUserRoles.txt";
-	String backupFileDirectory = "src/com/nathanrajkumar/resources/backup/";
-	String backupFileName = new SimpleDateFormat("'" + backupFileDirectory + "backup_'yyyyMMddHHmm'.txt'").format(new Date());
+	String FILENAME = "src/com/nathanrajkumar/resources/dataUserRoles.txt";
+	String BACKUP_FILE_DIRECTORY = "src/com/nathanrajkumar/resources/backup/";
+	String BACKUP_FILE_NAME = new SimpleDateFormat("'" + BACKUP_FILE_DIRECTORY + "backup_'yyyyMMddHHmm'.txt'").format(new Date());
 
 	List<User> getUsersFromFile();
 	

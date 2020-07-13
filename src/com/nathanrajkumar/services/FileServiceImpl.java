@@ -12,9 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.nathanrajkumar.model.User;
@@ -28,7 +26,7 @@ public class FileServiceImpl implements FileService {
 		BufferedReader fileReader = null;
 		String line;
 		try {
-			fileReader = new BufferedReader(new FileReader(fileName));
+			fileReader = new BufferedReader(new FileReader(FILENAME));
 			while (( line = fileReader.readLine()) != null) {
 				String[] splitLine = line.split(",");
 				User user = new User(splitLine[0].trim(), splitLine[1].trim(), splitLine[2].trim(), splitLine[3].trim());
@@ -58,8 +56,8 @@ public class FileServiceImpl implements FileService {
 	
 	
 	public void saveToFile(List<User> users) throws IOException  {
-		File backupFile = new File(backupFileName);
-		File file = new File(fileName);
+		File backupFile = new File(BACKUP_FILE_NAME);
+		File file = new File(FILENAME);
 		this.makeBackupFile(file, backupFile);
 		try {
 			Files.deleteIfExists(file.toPath());
